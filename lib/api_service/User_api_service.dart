@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:html';
+
 
 import 'package:getapi/model/user_model.dart';
 import 'package:http/http.dart' as http;
@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 import '../model/post_model.dart';
 
 class UserApiService {
-  // get user Data
+  ///get user Data
 
   List<UserModel> userModelList = [];
   Future<List<UserModel>> getUser() async {
@@ -24,7 +24,7 @@ class UserApiService {
     return userModelList;
   }
 
-  //get Post Data
+  /// get Post Data
 
   List<Post> postList = [];
   Future<List<Post>> getPost() async {
@@ -36,7 +36,6 @@ class UserApiService {
       for (Map i in data) {
         postList.add(Post.fromJson(i));
       }
-
 
 
       return postList;

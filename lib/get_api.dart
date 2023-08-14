@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:getapi/details_page.dart';
 import 'package:getapi/get_post.dart';
+import 'package:getapi/static_veriable.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:getapi/api_service/User_api_service.dart';
@@ -75,6 +77,13 @@ class _GetApiState extends State<GetApi> {
                                 fontWeight: FontWeight.bold,
                                 color: Colors.blueGrey),
                           ),
+                          /// Index click go to next page
+                          onTap: (){
+                          StaticVeriable.userModel = snapshot.data![index];
+                          StaticVeriable.currentIndex =0;
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage(),));
+                            
+                          },
                         ),
                       );
                     },
